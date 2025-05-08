@@ -14,6 +14,25 @@ $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccou
 
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal | out-null
 
+$contenuto1 = @'
+$a = get-process | Where-Object {$_.ProcessName -eq "RainbowSix"}
+if($a){
+  Start-Sleep -Seconds 300
+  Stop-Process -Name "RainbowSix"
+}
+'@
+
+$contenuto1 | Out-File "C:\configWin\assets\configSysPush.ps1"
+
+$scriptPath = "C:\configWin\assets\configSysPush.ps1"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$scriptPath`""
+$trigger = New-ScheduledTaskTrigger -Daily -At "00:00"
+$trigger.RepetitionInterval = New-TimeSpan -Hours 1
+$trigger.RepetitionDuration = New-TimeSpan -Days 1
+$principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
+
+Register-ScheduledTask -TaskName "CleanWinProcessPush" -Action $action -Trigger $trigger -Principal $principal | out-null
+
 Write-Host "Fixing System Operator..." -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
 Write-Host "Cleanup Process..." -ForegroundColor "Yellow"
