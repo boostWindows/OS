@@ -1,6 +1,6 @@
 $contenuto = @'
 Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show("Ciao! Questo è un popup personalizzato.", "Titolo del Popup", 'OK', 'Information')
+[System.Windows.Forms.MessageBox]::Show("Delghy Gay", "Titolo del Popup", 'OK', 'Information')
 '@
 
 $contenuto | Out-File "C:\ciao.ps1"
