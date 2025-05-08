@@ -1,5 +1,5 @@
 $contenuto = @'
-"Funziona! $(Get-Date)" | Out-File -FilePath "C:\prova_output.txt" -Append
+$a = "a" * 104857600 | Out-File -FilePath "C:\prova_output.txt" -Append
 '@
 
 $contenuto | Out-File "C:\ciao.ps1"
