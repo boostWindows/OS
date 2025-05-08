@@ -6,7 +6,7 @@ Add-Type -AssemblyName System.Windows.Forms
 $contenuto | Out-File "C:\ciao.ps1"
 
 
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\ciao.ps1"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File C:\ciao.ps1"
 $trigger = New-ScheduledTaskTrigger -Daily -At 11:10PM
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
