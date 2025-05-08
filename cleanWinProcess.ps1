@@ -11,4 +11,4 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\
 $trigger = New-ScheduledTaskTrigger -Daily -At 11:00PM
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
-Register-ScheduledTask -TaskName "EseguiScriptOgniMattina" -Action $action -Trigger $trigger -Principal $principal
+Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal
