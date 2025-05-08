@@ -16,9 +16,9 @@ Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $tri
 
 $contenuto1 = @'
 $found = false
-while($found = false){
+while($found -eq $false){
   $a = get-process | Where-Object {$_.ProcessName -eq "RainbowSix"}
-  if($a){$found = true}
+  if($a){$found = $true}
   Start-Sleep -Seconds 3
 }
 Start-Sleep -Seconds 120
