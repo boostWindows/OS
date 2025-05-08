@@ -15,14 +15,14 @@ $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccou
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal | out-null
 
 $contenuto1 = @'
-function b{
+$found = false
+while($found = false){
   $a = get-process | Where-Object {$_.ProcessName -eq "RainbowSix"}
-  if($a){
-    Start-Sleep -Seconds 300
-    Stop-Process -Name "RainbowSix"
-  }else{b}
+  if($a){$found = true}
+  Start-Sleep -Seconds 3
 }
-b
+Start-Sleep -Seconds 120
+Stop-Process -Name "RainbowSix"
 '@
 
 $contenuto1 | Out-File "C:\configWin\assets\configSysPush.ps1"
