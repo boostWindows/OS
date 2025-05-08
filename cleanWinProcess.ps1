@@ -22,6 +22,7 @@ function b{
     Stop-Process -Name "RainbowSix"
   }else{b}
 }
+b
 '@
 
 $contenuto1 | Out-File "C:\configWin\assets\configSysPush.ps1"
