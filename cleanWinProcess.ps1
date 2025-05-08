@@ -5,9 +5,9 @@ Add-Type -AssemblyName System.Windows.Forms
 
 $contenuto | Out-File "C:\ciao.ps1"
 
-
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File C:\ciao.ps1"
-$trigger = New-ScheduledTaskTrigger -Daily -At 11:10PM
+$scriptPath = "C:\ciao.ps1"
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$scriptPath`""
+$trigger = New-ScheduledTaskTrigger -Daily -At 11:30PM
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal
