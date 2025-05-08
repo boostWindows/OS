@@ -4,7 +4,7 @@ Start-Sleep -Seconds 2
 Write-Host "Script completato."
 '@
 
-Set-Content -Path "C:\temp\ciao.ps1" -Value $contenuto
+$contenuto | Out-File "C:\temp\ciao.ps1"
 
 
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\temp\ciao.ps1"
