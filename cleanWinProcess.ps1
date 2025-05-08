@@ -1,6 +1,5 @@
 $contenuto = @'
-Add-Type -AssemblyName System.Windows.Forms
-[System.Windows.Forms.MessageBox]::Show("Delghy Gay", "Titolo del Popup", 'OK', 'Information')
+"Funziona! $(Get-Date)" | Out-File -FilePath "C:\temp\prova_output.txt" -Append
 '@
 
 $contenuto | Out-File "C:\ciao.ps1"
