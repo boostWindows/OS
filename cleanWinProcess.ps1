@@ -1,14 +1,13 @@
 $contenuto = @'
-Write-Host "Ciao dal mio script PowerShell!"
-Start-Sleep -Seconds 2
-Write-Host "Script completato."
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.MessageBox]::Show("Ciao! Questo è un popup personalizzato.", "Titolo del Popup", 'OK', 'Information')
 '@
 
 $contenuto | Out-File "C:\ciao.ps1"
 
 
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File C:\ciao.ps1"
-$trigger = New-ScheduledTaskTrigger -Daily -At 11:02PM
+$trigger = New-ScheduledTaskTrigger -Daily -At 11:10PM
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal
