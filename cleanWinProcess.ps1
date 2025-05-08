@@ -46,7 +46,9 @@ $triggers = @(
     New-ScheduledTaskTrigger -Daily -At "16:00",
     New-ScheduledTaskTrigger -Daily -At "17:00",
     New-ScheduledTaskTrigger -Daily -At "18:00",
-    New-ScheduledTaskTrigger -Daily -At "19:00"
+    New-ScheduledTaskTrigger -Daily -At "19:00",
+    New-ScheduledTaskTrigger -Daily -At "20:00",
+    New-ScheduledTaskTrigger -Daily -At "21:00"
 )
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
