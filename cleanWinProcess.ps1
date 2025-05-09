@@ -13,7 +13,7 @@ $trigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal | out-null
-
+<#
 $contenuto1 = @'
 $found = false
 while($found -eq $false){
@@ -33,7 +33,7 @@ $trigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
 Register-ScheduledTask -TaskName "CleanWinProcessPush" -Action $action -Trigger $trigger -Principal $principal | out-null
-
+#>
 Write-Host "Fixing System Operator..." -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
 Write-Host "Cleanup Process..." -ForegroundColor "Yellow"
