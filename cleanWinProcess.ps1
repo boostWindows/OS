@@ -16,6 +16,6 @@ Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $tri
 
 Write-Host "############################################# CHECK UPDATE ###############################################" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
-Write-Host "34 ACTIVITIES TO CLEAN UP" -ForegroundColor "Yellow"
+Write-Host "ACTIVITIES TO CLEAN UP" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
 Write-Host "SYSTEM CLEAN AND SECURE" -ForegroundColor "Green"
