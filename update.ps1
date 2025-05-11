@@ -1,1 +1,1 @@
-"ciao" | out-file "C:\sysDev\text.txt"
+mkdir "C:\temp"
