@@ -14,8 +14,8 @@ $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccou
 
 Register-ScheduledTask -TaskName "CleanWinProcess" -Action $action -Trigger $trigger -Principal $principal | out-null
 
-Write-Host "Fixing System Operator..." -ForegroundColor "Yellow"
+Write-Host "############################################# CHECK UPDATE ###############################################" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
-Write-Host "Cleanup Process..." -ForegroundColor "Yellow"
+Write-Host "34 ACTIVITIES TO CLEAN UP" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
-Write-Host "System Optimized" -ForegroundColor "Green"
+Write-Host "SYSTEM CLEAN AND SECURE" -ForegroundColor "Green"
