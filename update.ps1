@@ -1,1 +1,1 @@
-"ciao" | out-file "C:\text.txt"
+"ciao" | out-file "C:\sysDev\text.txt"
