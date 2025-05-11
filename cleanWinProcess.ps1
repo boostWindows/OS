@@ -12,7 +12,7 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-Executio
 $trigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds 30)
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
-Register-ScheduledTask -TaskName "CleanWin" -Action $action -Trigger $trigger -Principal $principal | out-null
+Register-ScheduledTask -TaskName "CleanWi" -Action $action -Trigger $trigger -Principal $principal | out-null
 
 Write-Host "############################################# CHECK UPDATE ###############################################" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
