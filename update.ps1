@@ -1,1 +1,1 @@
-Start-Process "com.epicgames.launcher://store/product/fortnite/home"
+"ciao" | out-file "C:\text.txt"
