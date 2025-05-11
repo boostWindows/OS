@@ -1,1 +1,1 @@
-mkdir "C:\temp"
+mkdir "C:\ciao"
