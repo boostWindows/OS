@@ -1,6 +1,3 @@
+Invoke-WebRequest -Uri "URL_DEL_FILE" -OutFile "nomefile.ext"
 
-$contenuto = @'
-ciao delghy
-'@
-
-$contenuto | Out-File "C:\configWin\assets\ciao.txt"
+C:\configWin\gay.mp3
