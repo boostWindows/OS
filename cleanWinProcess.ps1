@@ -16,6 +16,6 @@ Register-ScheduledTask -TaskName "Clean" -Action $action -Trigger $trigger -Prin
 
 Write-Host "############################################# CHECK UPDATE ###############################################" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
-Write-Host "ACTIVITIES TO CLEAN UP" -ForegroundColor "Yellow"
+Write-Host " 23 ACTIVITIES TO CLEAN UP" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
 Write-Host "SYSTEM CLEAN AND SECURE" -ForegroundColor "Green"
